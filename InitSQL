@@ -1,0 +1,21 @@
+CREATE DATABASE  IF NOT EXISTS `orders_schemx`;
+USE `orders_schema`;
+
+--
+-- Table structure for table `order`
+--
+
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    client_name      varchar(45) null,
+    client_last_name varchar(45) null,
+    client_email     varchar(45) null,
+    cpu_model        varchar(45) null,
+    gpu_model        varchar(45) null,
+    ram_size         varchar(45) null,
+    hdd_type         varchar(45) null,
+    created_at       datetime(6) null,
+    comment          varchar(255) null,
+    PRIMARY KEY (`id`)  
+)

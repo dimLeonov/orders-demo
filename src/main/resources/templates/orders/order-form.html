@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+	<title>Save Order</title>
+</head>
+
+<body>
+
+	<div class="container">
+	
+		<h3>Order Directory</h3>
+		<hr>
+		
+		<p class="h4 mb-4">Save Order</p>
+	
+		<form action="#" th:action="@{/orders/save}"
+						 th:object="${order}" method="POST">
+		
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{id}" />
+			
+			<input type="text" th:field="*{firstName}"
+					class="form-control mb-4 col-4" placeholder="First name">
+
+			<input type="text" th:field="*{lastName}"
+					class="form-control mb-4 col-4" placeholder="Last name">
+
+			<input type="text" th:field="*{email}"
+					class="form-control mb-4 col-4" placeholder="Email">
+
+			<select th:field="*{cpuModel}"
+					class="form-control mb-4 col-4" placeholder="CPU">
+				<option value="I3">Intel I3</option>
+				<option value="I5">Intel I5</option>
+				<option value="I7">Intel I7</option>
+				<option value="I8">Intel I123</option>
+			</select>
+
+			<select th:field="*{gpuModel}"
+					class="form-control mb-4 col-4" placeholder="GPU">
+				<option value="GFX 720">GFX 720</option>
+				<option value="GFX 1050">GFX 1050</option>
+				<option value="GFX 1070">GFX 1070</option>
+				<option value="GFX 3060">GFX 3060</option>
+			</select>
+
+			<select th:field="*{ramSize}"
+					class="form-control mb-4 col-4" placeholder="RAM SIZE">
+				<option value="4">2X 4GB</option>
+				<option value="8">2X 8GB</option>
+				<option value="16">2X 16GB</option>
+				<option value="32">2X 32GB</option>
+			</select>
+
+
+			<p th:text="${#execInfo.now.time}"></p>
+
+
+
+
+			<button type="submit" class="btn btn-info col-2">Save</button>
+						
+		</form>
+	
+		<hr>
+		<a th:href="@{/orders/list}">Back to Orders List</a>
+		
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

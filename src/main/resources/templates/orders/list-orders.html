@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+	<title>Order Directory</title>
+</head>
+
+<body>
+
+<div class="container">
+
+	<h3>Order Directory</h3>
+	<hr>
+	
+	<!-- Add a button -->
+	<a th:href="@{/orders/showFormForAdd}"
+		class="btn btn-primary btn-sm mb-3">
+		Add Order
+	</a>
+	
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>CPU MODEL</th>
+				<th>GPU MODEL</th>
+				<th>RAM SIZE</th>
+				<th>Order Date</th>
+				<th>Action</th>
+
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempOrder : ${orders}">
+			
+				<td th:text="${tempOrder.firstName}" />
+				<td th:text="${tempOrder.lastName}" />
+				<td th:text="${tempOrder.email}" />
+				<td th:text="${tempOrder.cpuModel}"/>
+				<td th:text="${tempOrder.gpuModel}"/>
+				<td th:text="${tempOrder.ramSize}"/>
+				<td th:text="${tempOrder.created_at}"/>
+
+				<td>
+					<!-- Add "update" button/link -->
+					<a th:href="@{/orders/showFormForUpdate(orderId=${tempOrder.id})}"
+					   class="btn btn-info btn-sm">
+						Update
+					</a>
+					
+					<!-- Add "delete" button/link -->					
+					<a th:href="@{/orders/delete(orderId=${tempOrder.id})}"
+					   class="btn btn-danger btn-sm"
+					   onclick="if (!(confirm('Are you sure you want to delete this order?'))) return false">
+						Delete
+					</a>
+					
+				</td>
+				
+				
+			</tr>
+		</tbody>		
+	</table>
+	
+</div>
+	
+</body>
+</html>
+
+
+

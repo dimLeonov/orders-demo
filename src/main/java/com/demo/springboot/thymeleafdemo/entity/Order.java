@@ -41,8 +41,8 @@ public class Order extends BaseEntity{
 	private String ramSize;
 
 
-	@Column(name="status")
-	private String status;
+	@Column(name="comment")
+	private String comment;
 
 	
 		
@@ -52,7 +52,7 @@ public class Order extends BaseEntity{
 		
 	}
 
-	public Order(int id,String firstName, String lastName, String email, String cpuModel, String gpuModel, String ramSize, Date orderDate, String status) {
+	public Order(int id,String firstName, String lastName, String email, String cpuModel, String gpuModel, String ramSize, Date orderDate, String comment) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -60,7 +60,7 @@ public class Order extends BaseEntity{
 		this.cpuModel = cpuModel;
 		this.gpuModel = gpuModel;
 		this.ramSize = ramSize;
-		this.status = status;
+		this.comment = comment;
 	}
 
 
@@ -130,12 +130,12 @@ public class Order extends BaseEntity{
 
 
 
-	public String getStatus() {
-		return status;
+	public String getComment() {
+		return comment;
 	}
 
-	public void setStatus(String staus) {
-		this.status = staus;
+	public void setComment(String staus) {
+		this.comment = staus;
 	}
 
 	// define tostring
@@ -151,7 +151,7 @@ public class Order extends BaseEntity{
 				", cpuModel='" + cpuModel + '\'' +
 				", gpuModel='" + gpuModel + '\'' +
 				", ramSize='" + ramSize + '\'' +
-				", staus='" + status + '\'' +
+				", comment ='" + comment + '\'' +
 				']';
 	}
 }

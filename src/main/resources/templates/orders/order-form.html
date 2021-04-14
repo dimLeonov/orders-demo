@@ -60,6 +60,8 @@
 				<option value="32">2X 32GB</option>
 			</select>
 
+			<input type="text" th:field="*{comment}"
+			class="form-control mb-6 col-6" placeholder="Add comment">
 
 			<p th:text="${#execInfo.now.time}"></p>
 

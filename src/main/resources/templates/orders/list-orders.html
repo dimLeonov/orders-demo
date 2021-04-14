@@ -36,6 +36,7 @@
 				<th>GPU MODEL</th>
 				<th>RAM SIZE</th>
 				<th>Order Date</th>
+				<th>Comment</th>th>
 				<th>Action</th>
 
 			</tr>
@@ -51,6 +52,7 @@
 				<td th:text="${tempOrder.gpuModel}"/>
 				<td th:text="${tempOrder.ramSize}"/>
 				<td th:text="${tempOrder.created_at}"/>
+				<td th:text="${tempOrder.comment}"/>
 
 				<td>
 					<!-- Add "update" button/link -->
